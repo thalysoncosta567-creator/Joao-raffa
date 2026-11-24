@@ -1,0 +1,204 @@
+:root {
+    --bege-fundo: #F7F4EF;
+    --bege-cartao: #EFECE6;
+    --bege-borda: #DFD8CC;
+    --verde-oliva: #556B2F;
+    --verde-oliva-escuro: #3E4F22;
+    --verde-oliva-suave: #72884A;
+    --texto-escuro: #2E3326;
+    --texto-suave: #5C6253;
+}
+
+body {
+    background-color: var(--bege-fundo);
+    color: var(--texto-escuro);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, .fonte-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Menu Bar */
+.navbar-casamento {
+    background-color: rgba(247, 244, 239, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--bege-borda);
+    padding: 0.9rem 0;
+}
+
+.logo-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 6px 20px;
+    border: 1px dashed var(--verde-oliva-suave);
+    border-radius: 50px;
+    background-color: var(--bege-cartao);
+    transition: all 0.3s ease;
+}
+
+.logo-box img {
+    max-height: 56px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--texto-escuro);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--verde-oliva);
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.1rem;
+    right: 1.1rem;
+    height: 2px;
+    background-color: var(--verde-oliva);
+}
+
+/* Composição da Foto em Camadas */
+.composicao-foto {
+    position: relative;
+    padding: 15px;
+}
+
+.fundo-decorativo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 90%;
+    background-color: var(--bege-cartao);
+    border: 1px solid var(--verde-oliva-suave);
+    border-radius: 220px 220px 16px 16px;
+    z-index: 0;
+}
+
+.moldura-casal {
+    position: relative;
+    z-index: 1;
+    padding: 12px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--bege-borda);
+    border-radius: 220px 220px 16px 16px;
+    box-shadow: 0 20px 45px rgba(62, 79, 34, 0.14);
+}
+
+.moldura-casal img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 208px 208px 10px 10px;
+}
+
+.selo-data {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    z-index: 2;
+    background-color: var(--verde-oliva-escuro);
+    color: var(--bege-fundo);
+    padding: 14px 26px;
+    border-radius: 14px;
+    border: 3px solid #FFFFFF;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .moldura-casal img {
+        height: 390px;
+    }
+    .selo-data {
+        right: 10px;
+        padding: 10px 20px;
+    }
+}
+
+/* Área de Texto / Dedicatória */
+.linha-curta {
+    display: inline-block;
+    width: 35px;
+    height: 1.5px;
+    background-color: var(--verde-oliva);
+}
+
+.citacao-destaque {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.45rem;
+    line-height: 1.4;
+    color: var(--verde-oliva-escuro);
+    border-left: 3px solid var(--verde-oliva);
+    padding-left: 1.25rem;
+    background-color: rgba(239, 236, 230, 0.55);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-right: 1rem;
+    border-radius: 0 12px 12px 0;
+}
+
+/* Botões */
+.btn-oliva {
+    background-color: var(--verde-oliva);
+    color: #FFFFFF;
+    border: 1px solid var(--verde-oliva);
+    padding: 0.85rem 1.8rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-oliva:hover {
+    background-color: var(--verde-oliva-escuro);
+    border-color: var(--verde-oliva-escuro);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.btn-oliva-outline {
+    background-color: transparent;
+    color: var(--verde-oliva-escuro);
+    border: 1px solid var(--verde-oliva);
+    padding: 0.85rem 1.8rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-oliva-outline:hover {
+    background-color: var(--bege-cartao);
+    color: var(--verde-oliva-escuro);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--verde-oliva-escuro);
+    color: var(--bege-fundo);
+}

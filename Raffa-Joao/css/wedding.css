@@ -1,0 +1,96 @@
+/* =========================================
+   ESTILOS DA PÁGINA WEEDING (CARROSSEL)
+   ========================================= */
+/* Moldura que se adapta exatamente ao tamanho e proporção de cada foto */
+.moldura-carrossel {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 8px solid #FFFFFF;
+    box-shadow: 0 18px 42px rgba(62, 79, 34, 0.14);
+}
+
+.moldura-carrossel .carousel-item img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 75vh; /* Limita apenas a altura máxima para fotos verticais caberem na tela sem rolar */
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .moldura-carrossel .carousel-item img {
+        max-height: 62vh;
+    }
+}
+
+/* Contador no canto superior direito */
+.contador-slides {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 5;
+    background-color: rgba(46, 51, 38, 0.65);
+    backdrop-filter: blur(4px);
+    color: var(--bege-fundo);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 50px;
+}
+
+/* Botões de seta personalizados */
+.seta-carrossel {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(247, 244, 239, 0.9);
+    color: var(--verde-oliva-escuro);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+
+.carousel-control-prev:hover .seta-carrossel,
+.carousel-control-next:hover .seta-carrossel {
+    background-color: var(--verde-oliva);
+    color: #FFFFFF;
+    transform: scale(1.08);
+}
+
+/* Barra de miniaturas abaixo do carrossel */
+.btn-miniatura {
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 68px;
+    height: 68px;
+    opacity: 0.55;
+    transition: all 0.25s ease;
+    background: none;
+}
+
+.btn-miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-miniatura:hover {
+    opacity: 0.9;
+}
+
+.btn-miniatura.ativa {
+    opacity: 1;
+    border-color: var(--verde-oliva);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(85, 107, 47, 0.25);
+}

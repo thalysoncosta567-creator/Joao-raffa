@@ -1,0 +1,74 @@
+/* =========================================
+   ESTILOS DA PÁGINA CASAMENTO (UPLOAD E QUADRADOS)
+   ========================================= */
+.divisor-oliva {
+    width: 65px;
+    height: 2px;
+    background-color: var(--verde-oliva);
+    margin: 1.25rem auto;
+}
+
+.caixa-upload {
+    background-color: #FFFFFF;
+    border: 2px dashed var(--verde-oliva-suave);
+    border-radius: 20px;
+    padding: 2.25rem 1.5rem;
+    box-shadow: 0 12px 30px rgba(62, 79, 34, 0.06);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.caixa-upload:hover {
+    border-color: var(--verde-oliva);
+    background-color: #FCFBF9;
+}
+
+.icone-upload {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--bege-cartao);
+    color: var(--verde-oliva);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grade de Quadrados Perfeitos (1:1) */
+.quadrado-foto {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: var(--bege-cartao);
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 8px 20px rgba(46, 51, 38, 0.09);
+    cursor: pointer;
+}
+
+.quadrado-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.quadrado-foto:hover img {
+    transform: scale(1.06);
+}
+
+.overlay-quadrado {
+    position: absolute;
+    inset: 0;
+    background: rgba(62, 79, 34, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.quadrado-foto:hover .overlay-quadrado {
+    opacity: 1;
+}

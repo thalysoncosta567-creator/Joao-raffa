@@ -1,0 +1,130 @@
+/* =========================================
+   ESTILOS DA PÁGINA PADRINHOS (VÍDEOS CLOUDINARY)
+   ========================================= */
+.divisor-oliva {
+    width: 65px;
+    height: 2px;
+    background-color: var(--verde-oliva);
+    margin: 1.25rem auto;
+}
+
+/* Card quadrado (1:1) da grade de vídeos */
+.quadrado-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: var(--verde-oliva-escuro);
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 8px 22px rgba(46, 51, 38, 0.12);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quadrado-video:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(62, 79, 34, 0.22);
+}
+
+/* Capa gerada pelo Cloudinary (e fallback se houver tag video) */
+.quadrado-video img,
+.quadrado-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.45s ease;
+    pointer-events: none;
+}
+
+.quadrado-video:hover img,
+.quadrado-video:hover video {
+    transform: scale(1.07);
+}
+
+/* Camada escura suave sobre a capa */
+.overlay-video {
+    position: absolute;
+    inset: 0;
+    background: rgba(46, 51, 38, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.quadrado-video:hover .overlay-video {
+    background: rgba(62, 79, 34, 0.4);
+}
+
+/* Botão circular central de Play */
+.botao-play-quadrado {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: rgba(247, 244, 239, 0.94);
+    color: var(--verde-oliva-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+    transition: all 0.25s ease;
+}
+
+.quadrado-video:hover .botao-play-quadrado {
+    background-color: var(--verde-oliva);
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+
+/* Legenda inferior com nome e papel do padrinho/madrinha */
+.legenda-video {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 28px 12px 12px;
+    background: linear-gradient(to top, rgba(25, 28, 20, 0.9) 0%, rgba(25, 28, 20, 0.5) 60%, transparent 100%);
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.legenda-video span {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.legenda-video small {
+    display: block;
+    margin-top: 2px;
+    color: #DCE5CC;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ajustes para telas menores (celular) */
+@media (max-width: 576px) {
+    .quadrado-video {
+        border-radius: 12px;
+        border-width: 3px;
+    }
+
+    .botao-play-quadrado {
+        width: 48px;
+        height: 48px;
+    }
+
+    .legenda-video {
+        padding: 22px 8px 8px;
+    }
+
+    .legenda-video span {
+        font-size: 0.85rem;
+    }
+}
